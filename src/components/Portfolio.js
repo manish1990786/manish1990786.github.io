@@ -181,15 +181,15 @@ const Portfolio = () => {
   };
 
   const SkillCard = ({ title, skillsData, icon, color }) => (
-    <Card sx={{ height: '100%', position: 'relative', overflow: 'visible' }}>
+    <Card sx={{ height: '100%', position: 'relative', overflow: 'visible', width: '100%' }}>
       <CardContent sx={{ p: 3 }}>
         <Box display="flex" alignItems="center" mb={3}>
           <Box
             sx={{
               p: 1.5,
               borderRadius: 2,
-              bgcolor: `${color}.light`,
-              color: `${color}.main`,
+              bgcolor: color === 'primary' ? 'primary.main' : 'secondary.main',
+              color: 'white',
               mr: 2,
             }}
           >
@@ -214,8 +214,8 @@ const Portfolio = () => {
                 label={`${skill.level}%`}
                 size="small"
                 sx={{
-                  bgcolor: `${color}.light`,
-                  color: `${color}.main`,
+                  bgcolor: color === 'primary' ? 'primary.main' : 'secondary.main',
+                  color: 'white',
                   fontWeight: 600,
                 }}
               />
@@ -229,7 +229,9 @@ const Portfolio = () => {
                 bgcolor: 'grey.200',
                 '& .MuiLinearProgress-bar': {
                   borderRadius: 4,
-                  background: `linear-gradient(45deg, ${theme.palette[color].main}, ${theme.palette[color].light})`,
+                  background: color === 'primary' ? 
+                    `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.primary.light})` :
+                    `linear-gradient(45deg, ${theme.palette.secondary.main}, ${theme.palette.secondary.light})`,
                 },
               }}
             />
@@ -577,9 +579,9 @@ const Portfolio = () => {
             Learn more about my background, passion for technology, and what drives my development journey.
           </Typography>
 
-          <Grid container spacing={6} alignItems="center">
+          <Grid container spacing={6} alignItems="stretch">
             <Grid item xs={12} md={6}>
-              <Box>
+              <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <Typography variant="h4" gutterBottom fontWeight={600} color="primary.main">
                   My Story
                 </Typography>
@@ -601,21 +603,21 @@ const Portfolio = () => {
               </Box>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Box textAlign="center">
+              <Box sx={{ width: '100%', textAlign: 'center' }}>
                 <img
                   src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
                   alt="Professional developer workspace"
                   style={{
                     width: '100%',
-                    maxWidth: 450,
+                    maxWidth: '100%',
                     borderRadius: 16,
                     boxShadow: '0 20px 60px rgba(0, 0, 0, 0.1)',
                     marginBottom: 32,
                   }}
                 />
-                <Grid container spacing={3} justifyContent="center">
+                <Grid container spacing={3}>
                   {achievements.map((achievement, index) => (
-                    <Grid key={index} item xs={6} sm={6}>
+                    <Grid key={index} item xs={6}>
                       <Paper
                         elevation={0}
                         sx={{
@@ -682,7 +684,7 @@ const Portfolio = () => {
             A comprehensive overview of my technical expertise across different domains of software development.
           </Typography>
           <Grid container spacing={4}>
-            <Grid item xs={12} sm={6} lg={3}>
+            <Grid item xs={12} md={6} lg={3}>
               <SkillCard
                 title="Frontend"
                 skillsData={skills.frontend}
@@ -690,7 +692,7 @@ const Portfolio = () => {
                 color="primary"
               />
             </Grid>
-            <Grid item xs={12} sm={6} lg={3}>
+            <Grid item xs={12} md={6} lg={3}>
               <SkillCard
                 title="Backend"
                 skillsData={skills.backend}
@@ -698,7 +700,7 @@ const Portfolio = () => {
                 color="secondary"
               />
             </Grid>
-            <Grid item xs={12} sm={6} lg={3}>
+            <Grid item xs={12} md={6} lg={3}>
               <SkillCard
                 title="Database"
                 skillsData={skills.database}
@@ -706,7 +708,7 @@ const Portfolio = () => {
                 color="primary"
               />
             </Grid>
-            <Grid item xs={12} sm={6} lg={3}>
+            <Grid item xs={12} md={6} lg={3}>
               <SkillCard
                 title="Cloud & DevOps"
                 skillsData={skills.cloud}
@@ -788,7 +790,7 @@ const Portfolio = () => {
           </Typography>
           <Grid container spacing={6}>
             <Grid item xs={12} md={6}>
-              <Card sx={{ p: 4, height: '100%' }}>
+              <Card sx={{ p: 4, height: '100%', width: '100%' }}>
                 <Typography variant="h5" gutterBottom fontWeight={600} color="primary.main">
                   Send a Message
                 </Typography>
@@ -851,51 +853,52 @@ const Portfolio = () => {
               </Card>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Card sx={{ p: 4, height: '100%' }}>
-                <Typography variant="h5" gutterBottom fontWeight={600} color="primary.main">
-                  Contact Information
-                </Typography>
-                <Box display="flex" alignItems="center" mb={3}>
-                  <Email sx={{ mr: 2, color: 'primary.main' }} />
-                  <Typography variant="body1">manishbansal019@gmail.com</Typography>
-                </Box>
-                <Box display="flex" alignItems="center" mb={3}>
-                  <LocationOn sx={{ mr: 2, color: 'primary.main' }} />
-                  <Typography variant="body1">India</Typography>
-                </Box>
-                <Box display="flex" alignItems="center" mb={4}>
-                  <Web sx={{ mr: 2, color: 'primary.main' }} />
-                  <Typography variant="body1">beyondscripts.hashnode.dev</Typography>
-                </Box>
-                <Divider sx={{ my: 3 }} />
-                <Typography variant="h6" gutterBottom fontWeight={600}>
-                  Connect With Me
-                </Typography>
-                <Box display="flex" flexDirection="column" gap={2}>
-                  {[
-                    { href: 'https://linkedin.com/in/manish-agrawal-ms', icon: <LinkedIn />, label: 'LinkedIn' },
-                    { href: 'https://github.com/manish1990786', icon: <GitHub />, label: 'GitHub' },
-                    { href: 'https://beyondscripts.hashnode.dev/', icon: <Web />, label: 'Blog' },
-                  ].map((social, index) => (
-                    <Button
-                      key={index}
-                      variant="outlined"
-                      startIcon={social.icon}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      sx={{
-                        borderRadius: 2,
-                        textTransform: 'none',
-                        fontWeight: 600,
-                        justifyContent: 'flex-start',
-                      }}
-                    >
-                      {social.label}
-                    </Button>
-                  ))}
-                </Box>
-              </Card>
+              <Card sx={{ p: 4, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+  <Box>
+    <Typography variant="h5" gutterBottom fontWeight={600} color="primary.main">
+      Contact Information
+    </Typography>
+    <Box display="flex" flexDirection="column" gap={2} mt={2}>
+      {[
+        { icon: <Email />, text: 'manishbansal019@gmail.com' },
+        { icon: <Phone />, text: '+91-6260803708' },
+        { icon: <LocationOn />, text: 'India' },
+        { icon: <Web />, text: 'beyondscripts.hashnode.dev' },
+      ].map((item, index) => (
+        <Box key={index} display="flex" alignItems="center">
+          <Box sx={{ color: 'primary.main', mr: 2 }}>{item.icon}</Box>
+          <Typography variant="body1">{item.text}</Typography>
+        </Box>
+      ))}
+    </Box>
+    <Divider sx={{ my: 4 }} />
+    <Typography variant="h6" gutterBottom fontWeight={600}>
+      Connect With Me
+    </Typography>
+    <Grid container spacing={2}>
+      {[
+        { href: 'https://linkedin.com/in/manish-agrawal-ms', icon: <LinkedIn />, label: 'LinkedIn' },
+        { href: 'https://github.com/manish1990786', icon: <GitHub />, label: 'GitHub' },
+        { href: 'https://beyondscripts.hashnode.dev/', icon: <Web />, label: 'Blog' },
+      ].map((social, index) => (
+        <Grid item xs={12} sm={6} key={index}>
+          <Button
+            variant="outlined"
+            startIcon={social.icon}
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            fullWidth
+            sx={{ textTransform: 'none', fontWeight: 600 }}
+          >
+            {social.label}
+          </Button>
+        </Grid>
+      ))}
+    </Grid>
+  </Box>
+</Card>
+
             </Grid>
           </Grid>
         </Container>
