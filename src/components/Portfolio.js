@@ -93,7 +93,7 @@ const Portfolio = () => {
     ],
     backend: [
       { name: 'Node.js', level: 95, icon: '🟢' },
-      { name: 'Java Spring Boot', level: 88, icon: '☕' },
+      { name: 'Spring Boot', level: 88, icon: '☕' },
       { name: 'PHP Laravel', level: 90, icon: '🐘' },
       { name: 'Express.js', level: 92, icon: '🚀' },
       { name: 'Nest.js', level: 90, icon: '🔴' },
@@ -657,14 +657,14 @@ const Portfolio = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
-                  alignItems: 'center', // centers horizontally
+                  alignItems: 'center', 
                   textAlign: 'center',
-                  mx: 'auto',            // horizontal margin auto to help centering in some cases
-                  width: '100%',         // ✅ keep this ONLY if children are center-aligned inside
-                  maxWidth: 500,         // ✅ helpful to prevent stretching on large screens
+                  mx: 'auto',  
+                  width: '100%',
+                  maxWidth: 500,
                 }}
               >
-                {/* ✅ Centered Image */}
+
                 <Box
                   component="img"
                   src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
@@ -678,7 +678,6 @@ const Portfolio = () => {
                   }}
                 />
 
-                {/* ✅ Centered Achievement Widgets */}
                 <Grid container spacing={3} justifyContent="center">
                   {achievements.map((achievement, index) => (
                     <Grid key={index} item xs={6}>
