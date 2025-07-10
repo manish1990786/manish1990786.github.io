@@ -656,11 +656,15 @@ const Portfolio = () => {
                 sx={{
                   display: 'flex',
                   flexDirection: 'column',
-                  alignItems: 'center',
                   justifyContent: 'center',
+                  alignItems: 'center', // centers horizontally
                   textAlign: 'center',
+                  mx: 'auto',            // horizontal margin auto to help centering in some cases
+                  width: '100%',         // ✅ keep this ONLY if children are center-aligned inside
+                  maxWidth: 500,         // ✅ helpful to prevent stretching on large screens
                 }}
               >
+                {/* ✅ Centered Image */}
                 <Box
                   component="img"
                   src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
@@ -674,7 +678,8 @@ const Portfolio = () => {
                   }}
                 />
 
-                <Grid container spacing={3} justifyContent="center" sx={{ maxWidth: 400 }}>
+                {/* ✅ Centered Achievement Widgets */}
+                <Grid container spacing={3} justifyContent="center">
                   {achievements.map((achievement, index) => (
                     <Grid key={index} item xs={6}>
                       <Paper
@@ -706,6 +711,7 @@ const Portfolio = () => {
                 </Grid>
               </Box>
             </Grid>
+
 
 
 
