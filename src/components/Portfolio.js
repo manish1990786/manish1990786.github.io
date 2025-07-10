@@ -792,149 +792,97 @@ const Portfolio = () => {
             sx={{ maxWidth: 'lg', mx: 'auto' }}
           >
             <Grid item xs={12} md={6}>
-              <Card sx={{ p: 4, height: '100%', width: '100%' }}>
-                <Typography variant="h5" gutterBottom fontWeight={600} color="primary.main">
-                  Send a Message
-                </Typography>
-                <Box component="form" onSubmit={handleSubmit}>
-                  <TextField
-                    fullWidth
-                    label="Your Name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    sx={{ mb: 3 }}
-                  />
-                  <TextField
-                    fullWidth
-                    label="Your Email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    sx={{ mb: 3 }}
-                  />
-                  <TextField
-                    fullWidth
-                    label="Subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    required
-                    sx={{ mb: 3 }}
-                  />
-                  <TextField
-                    fullWidth
-                    label="Your Message"
-                    name="message"
-                    multiline
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    sx={{ mb: 3 }}
-                  />
-                  <Button
-                    type="submit"
-                    variant="contained"
-                    size="large"
-                    endIcon={<Send />}
-                    sx={{
-                      width: '100%',
-                      py: 1.5,
-                      fontSize: '1.1rem',
-                      fontWeight: 600,
-                      borderRadius: 2,
-                    }}
-                  >
-                    Send Message
-                  </Button>
-                </Box>
-              </Card>
-            </Grid>
+              <Box display="flex" justifyContent="center">
+                <Card
+                  sx={{
+                    p: 4,
+                    width: '100%',
+                    maxWidth: 500,
+                    boxShadow: 3,
+                  }}
+                >
 
-            <Grid item xs={12} md={6}>
-              <Card
-                sx={{
-                  p: 4,
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                }}
-              >
-                <Box>
-                  <Typography variant="h5" gutterBottom fontWeight={600} color="primary.main">
-                    Contact Information
-                  </Typography>
-                  <Box display="flex" flexDirection="column" gap={2} mt={2}>
-                    {[
-                      { icon: <Email />, text: 'manishbansal019@gmail.com' },
-                      { icon: <Phone />, text: '+91-6260803708' },
-                      { icon: <LocationOn />, text: 'India' },
-                      { icon: <Web />, text: 'beyondscripts.hashnode.dev' },
-                    ].map((item, index) => (
-                      <Box key={index} display="flex" alignItems="center">
-                        <Box sx={{ color: 'primary.main', mr: 2 }}>{item.icon}</Box>
-                        <Typography variant="body1">{item.text}</Typography>
+
+                  <Grid item xs={12} md={6}>
+                    <Card
+                      sx={{
+                        p: 4,
+                        height: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'space-between',
+                      }}
+                    >
+                      <Box>
+                        <Typography variant="h5" gutterBottom fontWeight={600} color="primary.main">
+                          Contact Information
+                        </Typography>
+                        <Box display="flex" flexDirection="column" gap={2} mt={2}>
+                          {[
+                            { icon: <Email />, text: 'manishbansal019@gmail.com' },
+                            { icon: <Phone />, text: '+91-6260803708' },
+                            { icon: <LocationOn />, text: 'India' },
+                            { icon: <Web />, text: 'beyondscripts.hashnode.dev' },
+                          ].map((item, index) => (
+                            <Box key={index} display="flex" alignItems="center">
+                              <Box sx={{ color: 'primary.main', mr: 2 }}>{item.icon}</Box>
+                              <Typography variant="body1">{item.text}</Typography>
+                            </Box>
+                          ))}
+                        </Box>
+
+                        <Divider sx={{ my: 4 }} />
+
+                        <Typography variant="h6" gutterBottom fontWeight={600}>
+                          Connect With Me
+                        </Typography>
+                        <Grid container spacing={2}>
+                          {[
+                            { href: 'https://linkedin.com/in/manish-agrawal-ms', icon: <LinkedIn />, label: 'LinkedIn' },
+                            { href: 'https://github.com/manish1990786', icon: <GitHub />, label: 'GitHub' },
+                            { href: 'https://beyondscripts.hashnode.dev/', icon: <Web />, label: 'Blog' },
+                          ].map((social, index) => (
+                            <Grid item xs={12} sm={6} key={index}>
+                              <Button
+                                variant="outlined"
+                                startIcon={social.icon}
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                fullWidth
+                                sx={{ textTransform: 'none', fontWeight: 600 }}
+                              >
+                                {social.label}
+                              </Button>
+                            </Grid>
+                          ))}
+                        </Grid>
                       </Box>
-                    ))}
-                  </Box>
-
-                  <Divider sx={{ my: 4 }} />
-
-                  <Typography variant="h6" gutterBottom fontWeight={600}>
-                    Connect With Me
-                  </Typography>
-                  <Grid container spacing={2}>
-                    {[
-                      { href: 'https://linkedin.com/in/manish-agrawal-ms', icon: <LinkedIn />, label: 'LinkedIn' },
-                      { href: 'https://github.com/manish1990786', icon: <GitHub />, label: 'GitHub' },
-                      { href: 'https://beyondscripts.hashnode.dev/', icon: <Web />, label: 'Blog' },
-                    ].map((social, index) => (
-                      <Grid item xs={12} sm={6} key={index}>
-                        <Button
-                          variant="outlined"
-                          startIcon={social.icon}
-                          href={social.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          fullWidth
-                          sx={{ textTransform: 'none', fontWeight: 600 }}
-                        >
-                          {social.label}
-                        </Button>
-                      </Grid>
-                    ))}
+                    </Card>
                   </Grid>
+                </Grid>
+
+              </Container>
+            </Box>
+
+            {/* Footer */}
+            <Box bgcolor="primary.dark" color="white" py={6}>
+              <Container maxWidth="lg">
+                <Box textAlign="center">
+                  <Typography variant="h6" gutterBottom fontWeight={600}>
+                    Manish Agrawal
+                  </Typography>
+                  <Typography variant="body2" color="rgba(255, 255, 255, 0.7)" paragraph>
+                    Full-Stack Developer | Cloud & DevOps Enthusiast | M.Tech BITS Pilani Alumni
+                  </Typography>
+                  <Typography variant="body2" color="rgba(255, 255, 255, 0.5)">
+                    © {new Date().getFullYear()} Manish Agrawal. All rights reserved.
+                  </Typography>
                 </Box>
-              </Card>
-            </Grid>
-          </Grid>
-
-        </Container>
-      </Box>
-
-      {/* Footer */}
-      <Box bgcolor="primary.dark" color="white" py={6}>
-        <Container maxWidth="lg">
-          <Box textAlign="center">
-            <Typography variant="h6" gutterBottom fontWeight={600}>
-              Manish Agrawal
-            </Typography>
-            <Typography variant="body2" color="rgba(255, 255, 255, 0.7)" paragraph>
-              Full-Stack Developer | Cloud & DevOps Enthusiast | M.Tech BITS Pilani Alumni
-            </Typography>
-            <Typography variant="body2" color="rgba(255, 255, 255, 0.5)">
-              © {new Date().getFullYear()} Manish Agrawal. All rights reserved.
-            </Typography>
+              </Container>
+            </Box>
           </Box>
-        </Container>
-      </Box>
-    </Box>
-  );
+          );
 };
 
-export default Portfolio;
+          export default Portfolio;
