@@ -597,7 +597,7 @@ const Portfolio = () => {
         </Container>
       </Box>
 
-      {/* About Section */}
+{/* About Section */}
       <Box id="about" py={12} bgcolor="background.paper">
         <Container maxWidth="lg">
           <Typography
@@ -629,6 +629,7 @@ const Portfolio = () => {
           </Typography>
 
           <Grid container spacing={6} alignItems="stretch">
+            {/* Left side: Text content */}
             <Grid item xs={12} md={6}>
               <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <Typography variant="h4" gutterBottom fontWeight={600} color="primary.main">
@@ -651,71 +652,75 @@ const Portfolio = () => {
                 </Typography>
               </Box>
             </Grid>
-<Grid item xs={12} md={6}>
-  <Box
-    sx={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      textAlign: 'center',
-      height: '100%',
-    }}
-  >
-    <Box
-      component="img"
-      src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-      alt="Professional developer workspace"
-      sx={{
-        width: '100%',
-        maxWidth: 400,
-        borderRadius: 3,
-        boxShadow: '0 20px 60px rgba(0, 0, 0, 0.1)',
-        mb: 4,
-      }}
-    />
 
-    <Grid
-      container
-      spacing={3}
-      justifyContent="center"
-      sx={{ maxWidth: 400 }}
-    >
-      {achievements.map((achievement, index) => (
-        <Grid item xs={6} key={index}>
-          <Paper
-            elevation={0}
-            sx={{
-              p: 3,
-              textAlign: 'center',
-              borderRadius: 3,
-              bgcolor: 'background.paper',
-              color: 'text.primary',
-              border: '2px solid #e2e8f0',
-              '&:hover': {
-                borderColor: 'primary.main',
-                transform: 'translateY(-4px)',
-              },
-              transition: 'all 0.3s ease',
-            }}
-          >
-            <Box sx={{ mb: 1, color: 'primary.main' }}>{achievement.icon}</Box>
-            <Typography variant="h4" fontWeight={800} gutterBottom color="primary.main">
-              {achievement.number}
-            </Typography>
-            <Typography variant="body2" fontWeight={600} color="text.secondary">
-              {achievement.label}
-            </Typography>
-          </Paper>
-        </Grid>
-      ))}
-    </Grid>
-  </Box>
-</Grid>
+            {/* Right side: Image and Achievements centered */}
+            <Grid item xs={12} md={6} display="flex" justifyContent="center" alignItems="center">
+              <Box
+                sx={{
+                  width: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    textAlign: 'center',
+                    maxWidth: 400,
+                    width: '100%',
+                    mx: 'auto',
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                    alt="Professional developer workspace"
+                    sx={{
+                      width: '100%',
+                      maxWidth: 400,
+                      borderRadius: 3,
+                      boxShadow: '0 20px 60px rgba(0, 0, 0, 0.1)',
+                      mb: 4,
+                    }}
+                  />
 
-
-
-
+                  <Grid container spacing={3} justifyContent="center" alignItems="center" sx={{ maxWidth: 400, mx: 'auto' }}>
+                    {achievements.map((achievement, index) => (
+                      <Grid item xs={6} key={index}>
+                        <Paper
+                          elevation={0}
+                          sx={{
+                            p: 3,
+                            textAlign: 'center',
+                            borderRadius: 3,
+                            bgcolor: 'background.paper',
+                            color: 'text.primary',
+                            border: '2px solid #e2e8f0',
+                            '&:hover': {
+                              borderColor: 'primary.main',
+                              transform: 'translateY(-4px)',
+                            },
+                            transition: 'all 0.3s ease',
+                          }}
+                        >
+                          <Box sx={{ mb: 1, color: 'primary.main' }}>{achievement.icon}</Box>
+                          <Typography variant="h4" fontWeight={800} gutterBottom color="primary.main">
+                            {achievement.number}
+                          </Typography>
+                          <Typography variant="body2" fontWeight={600} color="text.secondary">
+                            {achievement.label}
+                          </Typography>
+                        </Paper>
+                      </Grid>
+                    ))}
+                  </Grid>
+                </Box>
+              </Box>
+            </Grid>
           </Grid>
         </Container>
       </Box>
