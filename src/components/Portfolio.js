@@ -603,26 +603,31 @@ const Portfolio = () => {
               </Box>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Box sx={{ width: '100%', textAlign: 'center' }}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  textAlign: 'center',
+                  width: '100%',
+                }}
+              >
+                {/* Centered Image */}
                 <Box
+                  component="img"
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                  alt="Professional developer workspace"
                   sx={{
+                    width: '100%',
                     maxWidth: 400,
-                    mx: 'auto',
+                    borderRadius: 4,
+                    boxShadow: '0 20px 60px rgba(0, 0, 0, 0.1)',
                     mb: 4,
                   }}
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                    alt="Professional developer workspace"
-                    style={{
-                      width: '100%',
-                      borderRadius: 16,
-                      boxShadow: '0 20px 60px rgba(0, 0, 0, 0.1)',
-                    }}
-                  />
-                </Box>
+                />
 
-                <Grid container spacing={3} justifyContent="center" maxWidth="sm" sx={{ mx: 'auto' }}>
+                {/* Centered Achievement Widgets */}
+                <Grid container spacing={3} justifyContent="center" maxWidth="sm">
                   {achievements.map((achievement, index) => (
                     <Grid key={index} item xs={6}>
                       <Paper
@@ -654,6 +659,7 @@ const Portfolio = () => {
                 </Grid>
               </Box>
             </Grid>
+
 
           </Grid>
         </Container>
