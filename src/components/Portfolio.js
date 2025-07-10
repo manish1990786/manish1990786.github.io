@@ -778,7 +778,13 @@ const Portfolio = () => {
           >
             I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.
           </Typography>
-          <Grid container spacing={6}>
+          <Grid
+            container
+            spacing={6}
+            alignItems="stretch"
+            justifyContent="center"
+            sx={{ maxWidth: 'lg', mx: 'auto' }}
+          >
             <Grid item xs={12} md={6}>
               <Card sx={{ p: 4, height: '100%', width: '100%' }}>
                 <Typography variant="h5" gutterBottom fontWeight={600} color="primary.main">
@@ -842,8 +848,17 @@ const Portfolio = () => {
                 </Box>
               </Card>
             </Grid>
+
             <Grid item xs={12} md={6}>
-              <Card sx={{ p: 4, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <Card
+                sx={{
+                  p: 4,
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                }}
+              >
                 <Box>
                   <Typography variant="h5" gutterBottom fontWeight={600} color="primary.main">
                     Contact Information
@@ -861,7 +876,9 @@ const Portfolio = () => {
                       </Box>
                     ))}
                   </Box>
+
                   <Divider sx={{ my: 4 }} />
+
                   <Typography variant="h6" gutterBottom fontWeight={600}>
                     Connect With Me
                   </Typography>
@@ -888,9 +905,9 @@ const Portfolio = () => {
                   </Grid>
                 </Box>
               </Card>
-
             </Grid>
           </Grid>
+
         </Container>
       </Box>
 
