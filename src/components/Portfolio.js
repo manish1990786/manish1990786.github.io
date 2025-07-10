@@ -657,11 +657,9 @@ const Portfolio = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
-                  alignItems: 'center', 
+                  alignItems: 'center',
                   textAlign: 'center',
-                  mx: 'auto',  
-                  width: '100%',
-                  maxWidth: 500,
+                  mx: 'auto',
                 }}
               >
 
@@ -670,17 +668,18 @@ const Portfolio = () => {
                   src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
                   alt="Professional developer workspace"
                   sx={{
-                    width: '100%',
-                    maxWidth: 400,
+                    maxWidth: '100%',
+                    width: 400,
                     borderRadius: 3,
                     boxShadow: '0 20px 60px rgba(0, 0, 0, 0.1)',
                     mb: 4,
                   }}
                 />
 
+
                 <Grid container spacing={3} justifyContent="center">
                   {achievements.map((achievement, index) => (
-                    <Grid key={index} item xs={6}>
+                    <Grid item xs={6} key={index}>
                       <Paper
                         elevation={0}
                         sx={{
@@ -710,9 +709,6 @@ const Portfolio = () => {
                 </Grid>
               </Box>
             </Grid>
-
-
-
 
 
           </Grid>
