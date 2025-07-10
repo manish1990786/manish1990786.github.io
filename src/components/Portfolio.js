@@ -604,18 +604,25 @@ const Portfolio = () => {
             </Grid>
             <Grid item xs={12} md={6}>
               <Box sx={{ width: '100%', textAlign: 'center' }}>
-                <img
-                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                  alt="Professional developer workspace"
-                  style={{
-                    width: '100%',
-                    maxWidth: '100%',
-                    borderRadius: 16,
-                    boxShadow: '0 20px 60px rgba(0, 0, 0, 0.1)',
-                    marginBottom: 32,
+                <Box
+                  sx={{
+                    maxWidth: 400,
+                    mx: 'auto',
+                    mb: 4,
                   }}
-                />
-                <Grid container spacing={3}>
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                    alt="Professional developer workspace"
+                    style={{
+                      width: '100%',
+                      borderRadius: 16,
+                      boxShadow: '0 20px 60px rgba(0, 0, 0, 0.1)',
+                    }}
+                  />
+                </Box>
+
+                <Grid container spacing={3} justifyContent="center" maxWidth="sm" sx={{ mx: 'auto' }}>
                   {achievements.map((achievement, index) => (
                     <Grid key={index} item xs={6}>
                       <Paper
@@ -634,9 +641,7 @@ const Portfolio = () => {
                           transition: 'all 0.3s ease',
                         }}
                       >
-                        <Box sx={{ mb: 1, color: 'primary.main' }}>
-                          {achievement.icon}
-                        </Box>
+                        <Box sx={{ mb: 1, color: 'primary.main' }}>{achievement.icon}</Box>
                         <Typography variant="h4" fontWeight={800} gutterBottom color="primary.main">
                           {achievement.number}
                         </Typography>
@@ -649,6 +654,7 @@ const Portfolio = () => {
                 </Grid>
               </Box>
             </Grid>
+
           </Grid>
         </Container>
       </Box>
