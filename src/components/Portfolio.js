@@ -798,7 +798,7 @@ const Portfolio = () => {
                   sx={{
                     p: 4,
                     width: '100%',
-                    maxWidth: 500, // Limit width like contact info card
+                    maxWidth: 500,
                     boxShadow: 3,
                   }}
                 >
