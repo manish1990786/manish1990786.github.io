@@ -608,25 +608,23 @@ const Portfolio = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
+                  justifyContent: 'center',
                   textAlign: 'center',
-                  width: '100%',
                 }}
               >
-                {/* ✅ Centered Image */}
                 <Box
                   component="img"
                   src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
                   alt="Professional developer workspace"
                   sx={{
                     width: '100%',
-                    maxWidth: 400, // ensures image doesn't stretch
+                    maxWidth: 400,
                     borderRadius: 3,
                     boxShadow: '0 20px 60px rgba(0, 0, 0, 0.1)',
                     mb: 4,
                   }}
                 />
 
-                {/* ✅ Centered Achievement Widgets */}
                 <Grid container spacing={3} justifyContent="center" sx={{ maxWidth: 400 }}>
                   {achievements.map((achievement, index) => (
                     <Grid key={index} item xs={6}>
@@ -659,6 +657,7 @@ const Portfolio = () => {
                 </Grid>
               </Box>
             </Grid>
+
 
 
 
