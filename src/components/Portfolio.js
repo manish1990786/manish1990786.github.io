@@ -119,39 +119,88 @@ const Portfolio = () => {
       period: 'May 2024 - Present',
       title: 'Lead Software Engineer',
       company: 'Korn Ferry',
-      description: 'Leading software engineering initiatives and architecting scalable solutions. Driving technical excellence and innovation across enterprise-level projects.',
-      technologies: ['React', 'Node.js', 'AWS', 'TypeScript', 'Microservices'],
+      location: 'Remote',
+      description: 'Leading software engineering initiatives and architecting scalable solutions...',
+      technologies: ['React', 'Node.js', 'AWS'],
       achievements: [
-        'Led a team of 8 engineers in developing enterprise-grade applications',
-        'Architected scalable microservices handling 100K+ daily requests',
-        'Improved system performance by 40% through optimization strategies'
+        'Led a team of 8 engineers',
+        'Architected microservices handling 100K+ requests',
       ]
     },
     {
       period: 'Sep 2023 - Apr 2024',
       title: 'Senior Software Engineer',
       company: 'Benchmark IT Solutions',
-      description: 'Developed complex enterprise applications with focus on performance optimization and system architecture.',
-      technologies: ['Angular', 'Java Spring Boot', 'PostgreSQL', 'Docker'],
-      achievements: [
-        'Implemented DevOps practices reducing deployment time by 60%',
-        'Designed and built CI/CD pipelines for multiple projects',
-        'Mentored junior developers on best practices'
-      ]
+      location: 'Pune, Maharashtra, India',
+      description: 'Developed complex enterprise applications...',
+      technologies: ['Angular', 'Java Spring Boot', 'PostgreSQL'],
+      achievements: ['Implemented DevOps practices']
     },
     {
       period: 'Sep 2021 - Aug 2023',
       title: 'Associate Software Engineer',
       company: 'Skillmine Technology Consulting',
-      description: 'Built robust full-stack applications and microservices for diverse client requirements.',
-      technologies: ['Vue.js', 'Node.js', 'MongoDB', 'Express.js'],
-      achievements: [
-        'Delivered 15+ successful projects for various clients',
-        'Implemented automated testing reducing bugs by 50%',
-        'Collaborated with cross-functional teams across multiple time zones'
-      ]
+      location: 'Mumbai, Maharashtra, India',
+      description: 'Built robust full-stack applications...',
+      technologies: ['Vue.js', 'MongoDB'],
+      achievements: ['Delivered 15+ projects']
+    },
+    {
+      period: 'Jan 2021 - Sep 2021',
+      title: 'Freelancer',
+      company: 'Freelance',
+      location: 'Remote',
+      description: 'Worked on diverse client projects independently.',
+      technologies: ['React', 'Node.js'],
+      achievements: ['Completed 10+ freelance contracts']
+    },
+    {
+      period: 'Sep 2018 - Jan 2021',
+      title: 'Web Application Specialist',
+      company: 'Tecqza',
+      location: 'Chhattisgarh, India',
+      description: 'Specialized in full-stack web app development.',
+      technologies: ['PHP', 'Laravel', 'JavaScript'],
+      achievements: ['Created scalable CMS solutions']
+    },
+    {
+      period: 'Jan 2018 - Aug 2018',
+      title: 'Software Engineer',
+      company: 'Regalix / MarketStar India',
+      location: 'Bengaluru, Karnataka, India',
+      description: 'Worked on client platform enhancements and integrations.',
+      technologies: ['JavaScript', 'jQuery', 'CRM'],
+      achievements: ['Improved support tools for clients']
+    },
+    {
+      period: 'Oct 2015 - Dec 2017',
+      title: 'Programmer / Trainee',
+      company: 'Garuda Dezine',
+      location: 'Bilaspur, Chhattisgarh, India',
+      description: 'Handled multiple local client web solutions.',
+      technologies: ['PHP', 'WordPress'],
+      achievements: ['Built 20+ websites']
+    },
+    {
+      period: 'Sep 2012 - Oct 2015',
+      title: 'Intern',
+      company: 'Garuda Dezine',
+      location: 'Bilaspur, Chhattisgarh, India',
+      description: 'Supported in web development and testing.',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      achievements: ['Assisted senior developers']
+    },
+    {
+      period: 'Mar 2010 - Sep 2012',
+      title: 'Information Technology Trainer',
+      company: 'Dsouza Computer Education',
+      location: 'India',
+      description: 'Trained students in software development fundamentals.',
+      technologies: ['C', 'C++', 'Java'],
+      achievements: ['Trained 100+ students']
     }
   ];
+
 
   const achievements = [
     { number: '15+', label: 'Years Experience', icon: <TrendingUp /> },
